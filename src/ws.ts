@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
 
   players[socket.id] = player;
 
-  io.to("main").emit("player_connected", player);
+  io.to("main").except(socket.id).emit("player_connected", player);
 
   socket.on("disconnect", () => {
     logger(`${socket.id} disconnected`);
