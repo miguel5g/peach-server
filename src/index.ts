@@ -1,5 +1,6 @@
-import 'dotenv/config';
+import "dotenv/config";
+import "./ws";
 
-import { server } from './app';
+import { server } from "./app";
 
 server.listen(process.env.PORT || 3000);
