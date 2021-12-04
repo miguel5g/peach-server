@@ -31,6 +31,8 @@ io.on("connection", (socket) => {
     },
   };
 
+  socket.emit("player_initial", player);
+
   players[socket.id] = player;
 
   io.to("main").emit("player_connected", player);
